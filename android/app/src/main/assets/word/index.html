@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>doc2pdf render</title>
+
+  <!-- Metric-compatible fonts (OFL) + Word-name aliases -->
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="aliases.css" />
+  <!-- Extra bundled twins (Wine Tahoma, Montserrat for Proxima Nova) -->
+  <link rel="stylesheet" href="fonts-extra.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    #doc {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Keep the rendered pages visually plain in the offscreen host.
+       Never center an oversized page: overflow would be clipped equally
+       on both sides by the print media box. */
+    .docx-wrapper {
+      background: #ffffff !important;
+      padding: 0 !important;
+      align-items: flex-start !important;
+    }
+    .docx-wrapper > section.docx {
+      box-shadow: none !important;
+      margin: 0 !important;
+      isolation: isolate;
+    }
+
+    /* Printing: zero page margin so docx-preview's <section> padding owns
+       the exact Word margins (paired with PrintAttributes.Margins.NO_MARGINS).
+       bridge.js injects the real @page size in CSS px before rendering. */
+    @media print {
+      @page { margin: 0; }
+      html, body { background: #ffffff; }
+      .docx-wrapper {
+        background: #ffffff !important;
+        padding: 0 !important;
+        align-items: flex-start !important;
+      }
+      .docx-wrapper > section.docx {
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="doc"></div>
+
+  <script src="jszip.min.js"></script>
+  <script src="EMFJS.bundle.min.js"></script>
+  <script src="WMFJS.bundle.min.js"></script>
+  <script src="docx-preview.js"></script>
+  <script src="bridge.js"></script>
+</body>
+</html>

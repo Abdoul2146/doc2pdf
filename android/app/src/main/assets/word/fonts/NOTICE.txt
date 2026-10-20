@@ -1,0 +1,37 @@
+Bundled font licenses
+=====================
+
+The fonts in this directory fall into two groups.
+
+1) Metric-compatible twins of Microsoft fonts, originally produced for the
+   Chrome OS core fonts / croscore and crosextra projects.
+
+     tinos-*.woff2     Times New Roman twin     SIL OFL 1.1
+     cousine-*.woff2   Courier New twin         SIL OFL 1.1
+     arimo-*.woff2     Arial twin               SIL OFL 1.1
+     carlito-*.woff2   Calibri twin             SIL OFL 1.1
+     caladea-*.woff2   Cambria twin             SIL OFL 1.1
+
+   Copyright Red Hat, Inc. / Google Inc. / Ascender Corp.
+   Licensed under the SIL Open Font License, Version 1.1.
+
+2) Twins added for fonts the letters request that Android does not ship.
+
+     tahoma-wine-400.ttf / tahoma-wine-700.ttf
+       Wine Tahoma (Regular / Bold). Metric-compatible with Microsoft Tahoma.
+       Copyright the Wine project authors.
+       Licensed under the GNU Lesser General Public License, v2.1 or later.
+
+     montserrat-*.woff2
+       Montserrat (Regular 400 / Medium 500 / Bold 700, latin + latin-ext).
+       Copyright 2011 The Montserrat Project Authors
+       (https://github.com/JulietaUla/Montserrat).
+       Licensed under the SIL Open Font License, Version 1.1.
+
+All fonts are used here only as substitutes for document fonts that are not
+present on the device, using the same name-matching mechanism Word uses for
+font substitution (see the <w:altName> entries in the source documents).
+
+Full license texts:
+  SIL OFL 1.1        https://scripts.sil.org/OFL
+  LGPL 2.1 or later  https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
